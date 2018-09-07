@@ -11,7 +11,7 @@ $(function() {
 		break;
 		
 	case 'Appetizers' :
-		$('#appetrizers').addClass('active');
+		$('#appetizers').addClass('active');
 		break;
 		
 	case 'About Us' :

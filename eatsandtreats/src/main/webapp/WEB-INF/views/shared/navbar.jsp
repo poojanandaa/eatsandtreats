@@ -20,7 +20,7 @@
 		<ul class="nav navbar-nav">
 			<li id="home"><a href="home">Home</a></li>
 			<li id="cakes"><a href="cakes">Cakes and Pastries</a></li>
-			<li id="appitizers"><a href="appetizers">Appetizers</a></li>
+			<li id="appetizers"><a href="appetizers">Appetizers</a></li>
 			<li id="orderOnline"><a href="#">Order Online</a></li>
 			<li id="contact"><a href="contactUs">Contact Us</a></li>
 			<li id="about"><a href="about">About Us</a></li>
