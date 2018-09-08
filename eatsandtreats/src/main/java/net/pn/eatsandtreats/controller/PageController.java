@@ -1,17 +1,13 @@
 package net.pn.eatsandtreats.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import net.pn.entbackend.dao.CategoryDAO;
-
 @Controller
 public class PageController {
+
 	
-	@Autowired
-	private CategoryDAO categoryDAO;	
 
 	@RequestMapping(value = { "/", "/home", "/index" })
 	public ModelAndView index() {
@@ -19,8 +15,6 @@ public class PageController {
 		mv.addObject("greeting", "welcome to spring web mvc");
 		mv.addObject("title", "Home");
 		mv.addObject("userClickHome", true);
-		
-		mv.addObject("categories",categoryDAO.list());
 		return mv;
 	}
 
@@ -32,33 +26,30 @@ public class PageController {
 		mv.addObject("userClickCakes", true);
 		return mv;
 	}
-	
+
 	@RequestMapping(value = "/appetizers")
-	public ModelAndView appetizers()
-	{
+	public ModelAndView appetizers() {
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("greeting","welcome to spring web mvc");
-		mv.addObject("title","Appetizers");
+		mv.addObject("greeting", "welcome to spring web mvc");
+		mv.addObject("title", "Appetizers");
 		mv.addObject("userClickAppetizers", true);
 		return mv;
 	}
-	
+
 	@RequestMapping(value = "/contactUs")
-	public ModelAndView contactUs()
-	{
+	public ModelAndView contactUs() {
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("greeting","welcome to spring web mvc");
-		mv.addObject("title","Contact Us");
+		mv.addObject("greeting", "welcome to spring web mvc");
+		mv.addObject("title", "Contact Us");
 		mv.addObject("userClickContactUs", true);
 		return mv;
 	}
-	
+
 	@RequestMapping(value = "/about")
-	public ModelAndView about()
-	{
+	public ModelAndView about() {
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("greeting","welcome to spring web mvc");
-		mv.addObject("title","About Us");
+		mv.addObject("greeting", "welcome to spring web mvc");
+		mv.addObject("title", "About Us");
 		mv.addObject("userClickAbout", true);
 		return mv;
 	}

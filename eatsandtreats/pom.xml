@@ -15,14 +15,6 @@
 
 	<dependencies>
 
-
-		<dependency>
-			<groupId>net.pn</groupId>
-			<artifactId>entbackend</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-
-		</dependency>
-
 		<!-- JAVA EE API -->
 		<dependency>
 			<groupId>javax</groupId>

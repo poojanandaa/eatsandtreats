@@ -9,8 +9,8 @@
    http://www.springframework.org/schema/context
    http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<context:component-scan base-package="net.pn.eatsandtreats.controller"></context:component-scan>
-	<context:component-scan base-package="net.pn.entbackend.daoImpl"></context:component-scan>
+	<context:component-scan base-package="net.pn.eatsandtreats.controller"/>
+		
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -23,4 +23,5 @@
 	<!-- LOADING STATIC RESOURCES -->
 	<mvc:annotation-driven />
 	<mvc:resources location="/assets/" mapping="/resources/**"></mvc:resources>
+	
 </beans>
