@@ -10,6 +10,7 @@
    http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<context:component-scan base-package="net.pn.eatsandtreats.controller"/>
+	<context:component-scan base-package="net.pn.entbackend"/>
 		
 
 	<bean id="viewResolver"
