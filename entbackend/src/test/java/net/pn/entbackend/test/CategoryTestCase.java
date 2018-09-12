@@ -42,13 +42,39 @@ public class CategoryTestCase {
 		
 	}*/
 	
-	@Test
+/*	@Test
 	public void testGetCategory()
 	{
 		category = categoryDAO.get(5);
 		assertEquals("succesfully fatched a categoey","pasteries",category.getName());
 		
 	}
+	*/
+
+	/*@Test
+	public void testUpdateCategory()
+	{
+		category = categoryDAO.get(5);
+		category.setName("appetizers");
+		assertEquals("succesfully fatched a categoey",true,categoryDAO.updateCategory(category));
+		
+	}*/
 	
+/*	@Test
+	public void testDeleteCategory()
+	{
+		category = categoryDAO.get(5);
+		
+		assertEquals("succesfully deleted a category",true,categoryDAO.deleteCategory(category));
+		
+	}
+	*/
+	@Test
+	public void testListCategory()
+	{
+		
+		assertEquals("succesfully get the list of categories ",3,categoryDAO.list().size());
+		
+	}
 }
 									

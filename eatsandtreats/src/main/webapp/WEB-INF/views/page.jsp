@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
@@ -19,10 +19,13 @@
 <title>Eats And Treats - ${title}</title>
 <script>
 	window.menu = '${title}';
+	window.contextRoot = '${contextRoot}';
 </script>
 
 <!-- Bootstrap Core CSS -->
 <link href="${css}/bootstrap.css" rel="stylesheet">
+<!-- datatable Bootstrap -->
+<link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
 <!-- self coded css -->
 <link href="${css}/myWeb.css" rel="stylesheet">
 </head>
@@ -37,27 +40,33 @@
 
 			<!-- PAGE CONTENT -->
 			<c:if test="${userClickHome == true}">
-				<%@include file="./shared/home.jsp"%>
+				<%@include file="home.jsp"%>
 			</c:if>
 
 			<!-- PAGE CONTENT -->
 			<c:if test="${userClickCakes == true}">
-				<%@include file="./shared/cakes.jsp"%>
+				<%@include file="cakesAndPasteries.jsp"%>
+			</c:if>
+
+			<!-- PAGE CONTENT -->
+			<c:if test="${userClickAppetizers== true}">
+				<%@include file="appetizers.jsp"%>
 			</c:if>
 			
 			<!-- PAGE CONTENT -->
-			<c:if test="${userClickAppetizers== true}">
-				<%@include file="./shared/appetizers.jsp"%>
+			<c:if test="${userClickAllItems== true}">
+			<%@include file="allItems.jsp"%>
 			</c:if>
+			
 			
 			<!-- PAGE CONTENT -->
 			<c:if test="${userClickContactUs== true}">
-				<%@include file="./shared/contactUs.jsp"%>
+				<%@include file="contactUs.jsp"%>
 			</c:if>
 
 			<!-- PAGE CONTENT -->
 			<c:if test="${userClickAbout == true}">
-				<%@include file="./shared/about.jsp"%>
+				<%@include file="about.jsp"%>
 			</c:if>
 		</div>
 
@@ -71,8 +80,13 @@
 	<script src="${js}/jquery.js"></script>
 	<!-- BOOTSTRAP JS  -->
 	<script src="${js}/bootstrap.min.js"></script>
+	<!-- DATATABLE JQUERY JS -->
+	<script src="${js}/jquery.dataTables.js"></script>
+	<!-- DATATABLE BOOTSTRAP JS -->
+	<script src="${js}/dataTables.bootstrap.js"></script>
 	<!-- MY WEB JS  -->
 	<script src="${js}/myWeb.js"></script>
+
 
 
 

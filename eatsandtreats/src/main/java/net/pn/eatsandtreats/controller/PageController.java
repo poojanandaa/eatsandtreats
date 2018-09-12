@@ -6,23 +6,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import net.pn.entbackend.dao.CategoryDAO;
+import net.pn.entbackend.dao.ItemDAO;
 
 @Controller
 public class PageController {
 
 	@Autowired
 	CategoryDAO categoryDAO;
+	ItemDAO itemDAO;
 
 	@RequestMapping(value = { "/", "/home", "/index" })
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("greeting", "welcome to spring web mvc");
 		mv.addObject("title", "Home");
+		mv.addObject("items", itemDAO.listActiveItems());
+		mv.addObject("categories", categoryDAO.list());
 		mv.addObject("userClickHome", true);
 		return mv;
 	}
 
-	@RequestMapping(value = "/cakes")
+	@RequestMapping(value = "/cakesAndPasteries")
 	public ModelAndView cakes() {
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("greeting", "welcome to spring web mvc");
@@ -37,6 +41,15 @@ public class PageController {
 		mv.addObject("greeting", "welcome to spring web mvc");
 		mv.addObject("title", "Appetizers");
 		mv.addObject("userClickAppetizers", true);
+		return mv;
+	}
+
+	@RequestMapping(value = "/allItems")
+	public ModelAndView allItems() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("greeting", "welcome to spring web mvc");
+		mv.addObject("title", "All Items");
+		mv.addObject("userClickAllItems", true);
 		return mv;
 	}
 

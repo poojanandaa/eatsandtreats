@@ -11,6 +11,7 @@ public interface CategoryDAO {
 	List <Category> list();
 	public Category get(int id);
 	public boolean updateCategory(Category category);
+	public boolean deleteCategory(Category category);
 	
 
 }

@@ -7,11 +7,15 @@ $(function() {
 		break;
 		
 	case 'Cakes and Pasteries' :
-		$('#cakes').addClass('active');
+		$('cakesAndPasteries').addClass('active');
 		break;
 		
 	case 'Appetizers' :
 		$('#appetizers').addClass('active');
+		break;
+		
+	case 'All Items' :
+		$('#allItems').addClass('active');
 		break;
 		
 	case 'About Us' :
@@ -25,8 +29,34 @@ $(function() {
 	default:
 		$('#home').addClass('active');
 	    break;
-		
-		
+		}
 	
-	}
+	
+	var items = [
+	               
+	               ['1','ABC'],
+	               ['2','dsd'],
+	               ['3','kse'],
+	               ['4','khs'],
+	               ['5','lkj'],
+	               ['6','jhy'],
+	               ['7','mjh'],
+	               ['8','uyt']	
+	                        
+	              ];
+	
+	var $table = $('#showAllItems');
+	if($table.length)
+		{
+//		console.log('table inserted');
+		
+		$table.DataTable(
+				{
+					lengthMenu : [[5,10,15,20,-1],['FIVE','TEN','FIFTEEN','TWENTY','ALL']],
+					pageLength :5,
+					data : items
+				})
+		}
+	
+	
 });
