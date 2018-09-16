@@ -2,7 +2,6 @@ package net.pn.entbackend.daoimpl;
 
 import java.util.List;
 
-
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -18,12 +17,11 @@ public class ItemDAOImpl implements ItemDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	@Override
 	public Item get(int id) {
 		return sessionFactory.getCurrentSession().get(Item.class, Integer.valueOf(id));
 	}
 
-	@Override
+	
 	public boolean add(Item item) {
 		try {
 			sessionFactory.getCurrentSession().persist(item);
@@ -34,12 +32,12 @@ public class ItemDAOImpl implements ItemDAO {
 		}
 	}
 
-	@Override
+	
 	public List<Item> list() {
 		return sessionFactory.getCurrentSession().createQuery("FROM Item", Item.class).getResultList();
 	}
 	
-	@Override
+	
 	public boolean update(Item item) {
 		try {
 			sessionFactory.getCurrentSession().update(item);
@@ -50,7 +48,7 @@ public class ItemDAOImpl implements ItemDAO {
 		}
 	}
 
-	@Override
+	
 	public boolean delete(Item item) {
 		item.setActive(false);
 
@@ -63,7 +61,7 @@ public class ItemDAOImpl implements ItemDAO {
 		}
 	}
 
-	@Override
+	
 	public List<Item> listActiveItems() {
 		String selectActiveItems = "FROM Item WHERE active = :active ";
 		return sessionFactory.getCurrentSession()
@@ -74,13 +72,13 @@ public class ItemDAOImpl implements ItemDAO {
 		
 	}
 
-	@Override
+	
 	public List<Item> listActiveItemsByCategory(int categoryId) {
-		String selectActiveItemsByCategory = "FROM Item WHERE active = :active and categorytId = :categorytId ";
+		String selectActiveItemsByCategory = "FROM Item WHERE active = :active and categoryId = :categoryId ";
 		return sessionFactory.getCurrentSession()
 								.createQuery(selectActiveItemsByCategory, Item.class)
 									.setParameter("active", true)
-										.setParameter("categorytId", categoryId)
+										.setParameter("categoryId", categoryId)
 											.getResultList();
 	}
 

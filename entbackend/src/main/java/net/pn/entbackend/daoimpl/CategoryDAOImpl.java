@@ -1,17 +1,14 @@
 package net.pn.entbackend.daoimpl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import net.pn.entbackend.dao.CategoryDAO;
 import net.pn.entbackend.dto.Category;
-import net.pn.entbackend.dto.Item;
 
 @Repository("categoryDAO")
 public class CategoryDAOImpl implements CategoryDAO {
@@ -25,7 +22,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		return sessionFactory.getCurrentSession().createQuery("FROM Category", Category.class).getResultList();
 	}
 
-	@Override
+
 	@Transactional
 	public boolean add(Category category) {
 
@@ -39,13 +36,13 @@ public class CategoryDAOImpl implements CategoryDAO {
 
 	}
 
-	@Override
+	
 	@Transactional
 	public Category get(int id) {
 		return sessionFactory.getCurrentSession().get(Category.class, Integer.valueOf(id));
 	}
 
-	@Override
+	
 	@Transactional
 	public boolean updateCategory(Category category) {
 		try {
@@ -58,7 +55,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 
 	}
 
-	@Override
+	
 	@Transactional
 	public boolean deleteCategory(Category category) {
 

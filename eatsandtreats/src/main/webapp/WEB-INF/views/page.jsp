@@ -45,18 +45,23 @@
 
 			<!-- PAGE CONTENT -->
 			<c:if test="${userClickCakes == true}">
-				<%@include file="cakesAndPasteries.jsp"%>
+				<%@include file="cakes.jsp"%>
 			</c:if>
 
-			<!-- PAGE CONTENT -->
+			<%-- <!-- PAGE CONTENT -->
 			<c:if test="${userClickAppetizers== true}">
 				<%@include file="appetizers.jsp"%>
-			</c:if>
+			</c:if> --%>
 			
 			<!-- PAGE CONTENT -->
-			<c:if test="${userClickAllItems== true}">
+			<c:if test="${userClickAllItems == true or userClickCategoryItems == true}">
 			<%@include file="allItems.jsp"%>
 			</c:if>
+			
+			<c:if test="${userClickShowItem == true}">
+			<%@include file="showItem.jsp"%>
+			</c:if>
+			
 			
 			
 			<!-- PAGE CONTENT -->

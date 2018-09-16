@@ -1,3 +1,6 @@
+<script>
+window.categoryId = '1' ;
+</script>
 <div class="container" style="margin-top: 130px; ">
 
 	<div class="row">
@@ -18,10 +21,10 @@
 
 				<div class="col-lg-12">
 
-					<c:if test="${userClickAllItems== true}">
+					<c:if test="${userClickAllItems == true}">
 
 						<script>
-							window.categoryId ='';
+							window.categoryId = '';
 						</script>
 
 						<ol class="breadcrumb">
@@ -39,7 +42,7 @@
 
 
 						<script>
-							window.categoryId = '${category.id}';
+							window.categoryId = '${category.Id}';
 						</script>
 
 

@@ -1,9 +1,13 @@
 package net.pn.entbackend.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+
+import java.awt.List;
+import java.util.ArrayList;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import net.pn.entbackend.dao.ItemDAO;
@@ -17,6 +21,7 @@ private static AnnotationConfigApplicationContext context;
 	private static ItemDAO itemDAO;
 	
 	
+	@Autowired
 	private Item item;
 	
 	
@@ -60,8 +65,11 @@ private static AnnotationConfigApplicationContext context;
 	
 	@Test
 	public void testListActiveItems() {
+		
+		
 		assertEquals("Something went wrong while fetching the list of items!",
-				8,itemDAO.listActiveItems().size());				
+				8,itemDAO.listActiveItems().size());	
+		
 	} 
 	
 	

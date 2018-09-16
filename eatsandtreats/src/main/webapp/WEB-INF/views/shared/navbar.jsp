@@ -19,9 +19,9 @@
 
 		<ul class="nav navbar-nav">
 			<li id="home"><a href="${contextRoot}/home">Home</a></li>
-			<li id="cakesAndPasteries"><a href="${contextRoot}/cakesAndPasteries">Cakes and Pastries</a></li>
-			<li id="appetizers"><a href="${contextRoot}/appetizers">Appetizers</a></li>
-			<li id="allItems"><a href="${contextRoot}/allItems">All Items</a></li>
+			<li id="cakes"><a href="${contextRoot}/show/category/1/items">Cakes</a></li>
+			<li id="appetizers"><a href="${contextRoot}/show/category/3/items">Appetizers</a></li>
+			<li id="listItems"><a href="${contextRoot}/show/all/items">All Items</a></li>
 			<li id="contact"><a href="${contextRoot}/contactUs">Contact Us</a></li>
 			<li id="about"><a href="${contextRoot}/about">About Us</a></li>
 		</ul>
