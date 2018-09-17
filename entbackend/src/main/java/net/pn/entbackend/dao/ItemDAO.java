@@ -6,11 +6,11 @@ import net.pn.entbackend.dto.Item;
 
 public interface ItemDAO {
 	
-		public Item get(int id);
+		Item get(int id);
 		boolean add(Item item);
 		List <Item> list();
-		public boolean update(Item item);
-		public boolean delete(Item item);
+		boolean update(Item item);
+		boolean delete(Item item);
 		
 		
 		

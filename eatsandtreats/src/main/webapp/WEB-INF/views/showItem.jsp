@@ -47,11 +47,21 @@
 			<h4>
 				Price: <strong> &#8377; ${item.unitPrice} /-</strong>
 			</h4>
-			<hr />
+			
+			<h6> 
+			  Quantity Avalable : ${item.quantity}
+			</h6>
+			
+			<a href="${contextRoot}/cart/add/${iten.id}/item" class="btn">
+			<span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart</a>
+			
+			<a href="${contextRoot}/show/all/items" class="btn btn-primary">
+			<span class=""></span>Back</a>
+			
 
 
 
-			<c:choose>
+		<%-- 	<c:choose>
 
 				<c:when test="${item.quantity < 1}">
 
@@ -70,7 +80,7 @@
 
 
 			<a href="${contextRoot}/show/all/items" class="btn btn-warning">
-				Continue Shopping</a>
+				Continue Shopping</a> --%>
 
 		</div>
 
