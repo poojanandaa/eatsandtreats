@@ -1,4 +1,4 @@
-<div class="container" style="margin-top:130px;">
+<div class="container" style="margin-top: 130px;">
 
 	<!-- Breadcrumb -->
 	<div class="row">
@@ -13,11 +13,7 @@
 				<li class="active">${item.name}</li>
 
 			</ol>
-
-
 		</div>
-
-
 	</div>
 
 
@@ -47,44 +43,48 @@
 			<h4>
 				Price: <strong> &#8377; ${item.unitPrice} /-</strong>
 			</h4>
+			<hr />
+
+			<security:authorize access="hasAuthority('USER')">
+				<c:choose>
+					<c:when test="${item.quantity < 1}">
+
+						<h6>
+							Qty. Available: <span style="color: red">Out of Stock!</span>
+							<hr />
+							<a href="javaScript:void()" class="btn btn-success disabled"><strike> 
+							<span class="glyphicon glyphicon-shopping-cart"> </span>Add to Cart
+							</strike></a> <a href="${contextRoot}/all/items" class="btn btn-primary"><span class=""></span>Back
+							</a>
+						</h6>
+
+					</c:when>
 			
-			<h6> 
-			  Quantity Avalable : ${item.quantity}
-			</h6>
-			
-			<a href="${contextRoot}/cart/add/${iten.id}/item" class="btn">
-			<span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart</a>
-			
+					<c:otherwise>
+						<a href="${contextRoot}/cart/add/${item.id}/item"
+							class="btn btn-success"> <span
+							class="glyphicon glyphicon-shopping-cart"> </span>Add to Cart
+						</a>
+						
+					</c:otherwise>
+				</c:choose>
+			</security:authorize>
+
+
+		 <security:authorize access="hasAuthority('ADMIN')">
+				<a href="${contextRoot}/manage/${item.id}/item"
+					class="btn btn-success"> <span
+					class="glyphicon glyphicon-pencil"></span> Edit
+				</a>
+			</security:authorize>
+
+
+
 			<a href="${contextRoot}/show/all/items" class="btn btn-primary">
-			<span class=""></span>Back</a>
-			
+							<span class=""></span>Back
+						</a>
 
-
-
-		<%-- 	<c:choose>
-
-				<c:when test="${item.quantity < 1}">
-
-					<h6>
-						Qty. Available: <span style="color: red">Out of Stock!</span>
-					</h6>
-
-				</c:when>
-				<c:otherwise>
-
-					<h6>Qty. Available: ${item.quantity}</h6>
-
-				</c:otherwise>
-
-			</c:choose>
-
-
-			<a href="${contextRoot}/show/all/items" class="btn btn-warning">
-				Continue Shopping</a> --%>
 
 		</div>
-
-
 	</div>
-
 </div>

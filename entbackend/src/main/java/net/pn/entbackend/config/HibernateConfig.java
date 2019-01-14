@@ -14,7 +14,7 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@ComponentScan(basePackages = { "net.pn.entbackend.dto" })
+@ComponentScan(basePackages = {"net.pn.entbackend.dto"})
 @EnableTransactionManagement
 public class HibernateConfig {
 
@@ -24,7 +24,7 @@ public class HibernateConfig {
 	private static final String DATABASE_USERNAME = "root";
 	private static final String DATABASE_PASSWORD = "root";
 
-	@Bean
+	@Bean("dataSource")
 	public DataSource getDataSource() {
 		BasicDataSource dataSource = new BasicDataSource();
 
@@ -51,6 +51,7 @@ public class HibernateConfig {
 		properties.put("hibernate.dialect", DATABASE_DIALECT);
 		properties.put("hibernate.show_sql", "true");
 		properties.put("hibernate.format_sql", "true");
+		properties.put("hibernate.hbm2ddl.auto", "update");
 		return properties;
 
 	}

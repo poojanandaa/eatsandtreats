@@ -16,8 +16,5 @@ public interface ItemDAO {
 		
 		List <Item> listActiveItems();
 		List <Item> listActiveItemsByCategory(int categoryId);
-		
-
-	
 
 }

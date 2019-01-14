@@ -33,7 +33,7 @@
 <body>
 
 	<div class="wrapper">
-		<!-- NAVIGATION BAR -->
+
 		<%@include file="./shared/navbar.jsp"%>
 
 		<div class="content">
@@ -48,28 +48,32 @@
 				<%@include file="cakes.jsp"%>
 			</c:if>
 
-			<%-- <!-- PAGE CONTENT -->
-			<c:if test="${userClickAppetizers== true}">
-				<%@include file="appetizers.jsp"%>
-			</c:if> --%>
-			
+
+
 			<!-- PAGE CONTENT -->
-			<c:if test="${userClickAllItems == true or userClickCategoryItems == true}">
-			<%@include file="allItems.jsp"%>
+			<c:if
+				test="${userClickAllItems == true or userClickCategoryItems == true}">
+				<%@include file="allItems.jsp"%>
 			</c:if>
-			
+
 			<c:if test="${userClickShowItem == true}">
-			<%@include file="showItem.jsp"%>
+				<%@include file="showItem.jsp"%>
+			</c:if>
+
+			<c:if test="${userClickManageItems == true}">
+				<%@include file="manageItems.jsp"%>
+			</c:if>
+
+			<c:if test="${userClickShowCart==true }">
+				<%@include file="cart.jsp"%>
 			</c:if>
 			
 			
-			
-			<!-- PAGE CONTENT -->
 			<c:if test="${userClickContactUs== true}">
 				<%@include file="contactUs.jsp"%>
 			</c:if>
 
-			<!-- PAGE CONTENT -->
+			
 			<c:if test="${userClickAbout == true}">
 				<%@include file="about.jsp"%>
 			</c:if>
@@ -83,6 +87,8 @@
 
 	<!-- JQUERY -->
 	<script src="${js}/jquery.js"></script>
+	<!-- JQUERY VALIDATOR -->
+	<script src="${js}/jquery.validate.js"></script>
 	<!-- BOOTSTRAP JS  -->
 	<script src="${js}/bootstrap.min.js"></script>
 	<!-- DATATABLE JQUERY JS -->

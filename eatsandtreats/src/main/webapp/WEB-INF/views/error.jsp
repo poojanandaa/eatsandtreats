@@ -26,7 +26,8 @@
 	<div class="wrapper">
 		<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">
-			< div class="navbar-header"> <a class="navbar-brand" href="home">
+			<div class="navbar-header">
+			 <a class="navbar-brand" href="${contextRoot}/home">
 				<img alt="Brand" src="">
 			</a>
 		</div>
@@ -41,7 +42,7 @@
 					<div class="jumbotron">
 						<h1>${errorTitle}</h1>
 						<hr>
-						<blockquote>${errorDescription}</blockquote>
+						<blockquote style:"word-wrap:break-word">${errorDescription}</blockquote>
 					</div>
 				</div>
 			</div>

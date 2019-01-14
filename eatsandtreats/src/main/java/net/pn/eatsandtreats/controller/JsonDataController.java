@@ -20,8 +20,15 @@ public class JsonDataController {
 
 	@ResponseBody
 	@RequestMapping("/all/items")
-	public List<Item> getAllItems() {
+	public List<Item> getAllActiveItems() {
 		return itemDAO.listActiveItems();
+	}
+	
+	
+	@ResponseBody
+	@RequestMapping("admin/all/items")
+	public List<Item> getAllItems() {
+		return itemDAO.list();
 	}
 
 	@RequestMapping("/category/{id}/items")

@@ -33,7 +33,7 @@ private static AnnotationConfigApplicationContext context;
 		itemDAO = (ItemDAO)context.getBean("itemDAO");
 	}
 	
-/*	@Test
+	@Test
 	public void testCRUDItem() {
 		
 		// create operation
@@ -47,7 +47,7 @@ private static AnnotationConfigApplicationContext context;
 				true,itemDAO.add(item));		
 		
 		
-		// reading and updating the category
+		/*// reading and updating the category
 		item = itemDAO.get(1);
 		item.setName("chocolate truffle");
 		assertEquals("Something went wrong while updating the existing record!",
@@ -59,10 +59,10 @@ private static AnnotationConfigApplicationContext context;
 		// list
 		assertEquals("Something went wrong while fetching the list of items!",
 				5,itemDAO.list().size());		
-				
+				*/
 	}
-*/
-	
+
+	/*
 	@Test
 	public void testListActiveItems() {
 		
@@ -70,7 +70,7 @@ private static AnnotationConfigApplicationContext context;
 		assertEquals("Something went wrong while fetching the list of items!",
 				8,itemDAO.listActiveItems().size());	
 		
-	} 
+	} */
 	
 	
 	/*@Test

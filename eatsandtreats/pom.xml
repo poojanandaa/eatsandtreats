@@ -11,6 +11,7 @@
 	<properties>
 		<javaee.version>7.0</javaee.version>
 		<spring.version>4.3.6.RELEASE</spring.version>
+		<spring.security.version>4.2.2.RELEASE</spring.security.version>
 	</properties>
 
 	<dependencies>
@@ -22,7 +23,9 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
+		
 		<!-- JAVA EE API -->
+
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
@@ -39,14 +42,7 @@
 		</dependency>
 
 		<!-- SPRING -->
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-
-
+		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -58,7 +54,13 @@
 			</exclusion>
 			</exclusions>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
 		<!-- JSTL -->
 
 		<dependency>
@@ -66,11 +68,34 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-	</dependencies>
+		
+		
+			
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
 
+		
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+
+		
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+
+
+	</dependencies>
 	<build>
+
 		<plugins>
-			<!-- UPDATE TO LATEST VERSION OF JAVA -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
@@ -80,6 +105,8 @@
 				</configuration>
 			</plugin>
 		</plugins>
+
+
 		<finalName>eatsandtreats</finalName>
 	</build>
 </project>
